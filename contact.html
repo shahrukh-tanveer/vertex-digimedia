@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Vertex DigiMedia</title>
+  <meta name="description" content="Contact Vertex DigiMedia for performance marketing, web development, analytics and creative engagements." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="container nav-inner">
+  <a class="logo" href="index.html">Vertex <span>Digi</span> Media</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="btn small">Contact Us</a>
+    </nav>
+    <div class="nav-social" aria-label="Social links">
+      <a href="https://www.facebook.com/profile.php?id=61564612019773" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M13.6 20.8v-7h2.4l.4-2.8h-2.8V9.1c0-.8.2-1.3 1.3-1.3h1.5V5.2c-.3 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2h-2.3v2.8h2.3v7h2.6Z"/></svg></a>
+      <a href="https://www.linkedin.com/company/vertexdigimedia/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M7.1 9.3v9.6H4V9.3h3.1ZM5.6 5.2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Zm4.8 4.1h3v1.3c.4-.7 1.3-1.5 2.8-1.5 2 0 3.5 1.3 3.5 4.2v5.6h-3.1v-5.2c0-1.3-.5-2.2-1.6-2.2-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.4h-3.1V9.3Z"/></svg></a>
+  <a href="https://www.upwork.com/freelancers/~010e39668b5b00a09c?s=1017484851352698999&fbclid=IwY2xjawMF1DBleHRuA2FlbQIxMQABHs9fACg0GHSa_HvSzyVDpSuqeUzW4aeX8QkoTGWYJE9NDHo43x0eCa3YXtJl_aem_YYHnjbrWqoHhUQm731aYNw" target="_blank" rel="noopener" aria-label="Upwork" class="social up">Up</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<section class="hero mini-hero">
+  <div class="overlay"></div>
+  <div class="container hero-inner">
+    <h1>Contact <span class="accent">Us</span></h1>
+    <p class="subtitle">Share context—get a tailored action plan within 24 hours.</p>
+  </div>
+</section>
+<section class="cta" id="main-contact">
+  <div class="container cta-inner">
+    <h2>Project & Growth Inquiries</h2>
+    <p>Fill the form and we’ll reply with next steps + initial audit notes.</p>
+    <form class="contact-form" id="contactPageForm" novalidate>
+      <div class="field-group">
+        <div class="field">
+          <label for="cp-name">Name</label>
+          <input type="text" id="cp-name" name="name" placeholder="Your name" required>
+          <span class="error" data-error-for="cp-name"></span>
+        </div>
+        <div class="field">
+          <label for="cp-email">Email</label>
+          <input type="email" id="cp-email" name="email" placeholder="you@example.com" required>
+          <span class="error" data-error-for="cp-email"></span>
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label for="cp-company">Company</label>
+          <input type="text" id="cp-company" name="company" placeholder="Company / Brand" required>
+          <span class="error" data-error-for="cp-company"></span>
+        </div>
+        <div class="field">
+          <label for="cp-site">Website</label>
+          <input type="url" id="cp-site" name="website" placeholder="https://" >
+          <span class="error" data-error-for="cp-site"></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cp-service">Primary Need</label>
+        <select id="cp-service" name="service" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Paid Media</option>
+          <option>Web Development</option>
+          <option>Creative / Design</option>
+          <option>Analytics / Tracking</option>
+          <option>CRO / Funnel</option>
+          <option>Automation / Integrations</option>
+        </select>
+        <span class="error" data-error-for="cp-service"></span>
+      </div>
+      <div class="field">
+        <label for="cp-budget">Monthly Budget (USD)</label>
+        <select id="cp-budget" name="budget" required>
+          <option value="" disabled selected>Select a range</option>
+          <option>< 5k</option>
+          <option>5k - 10k</option>
+          <option>10k - 25k</option>
+          <option>25k - 50k</option>
+          <option>50k+</option>
+        </select>
+        <span class="error" data-error-for="cp-budget"></span>
+      </div>
+      <div class="field">
+        <label for="cp-message">Project / Growth Brief</label>
+        <textarea id="cp-message" name="message" rows="6" placeholder="Goals, KPIs, timelines, stack..." required></textarea>
+        <span class="error" data-error-for="cp-message"></span>
+      </div>
+      <button type="submit" class="btn primary full" id="cp-submit">Send Message</button>
+      <p class="form-status" id="cp-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<section class="services" style="padding-top:2rem;">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:2rem;">
+      <h2>Other Ways</h2>
+  <p class="lead">Email: <a href="mailto:support@vertexdigimedia.com">support@vertexdigimedia.com</a> &nbsp; | &nbsp; WhatsApp: <a href="https://wa.me/923350225705" target="_blank" rel="noopener">+92 335 0225705</a></p>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container foot-inner">
+  <a class="foot-brand" href="index.html">Vertex <span>Digi</span> Media</a>
+    <div class="foot-social" aria-label="Social links">
+      <a href="https://www.facebook.com/profile.php?id=61564612019773" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 20.8v-7h2.4l.4-2.8h-2.8V9.1c0-.8.2-1.3 1.3-1.3h1.5V5.2c-.3 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2h-2.3v2.8h2.3v7h2.6Z"/></svg></a>
+      <a href="https://www.linkedin.com/company/vertexdigimedia/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.1 9.3v9.6H4V9.3h3.1ZM5.6 5.2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Zm4.8 4.1h3v1.3c.4-.7 1.3-1.5 2.8-1.5 2 0 3.5 1.3 3.5 4.2v5.6h-3.1v-5.2c0-1.3-.5-2.2-1.6-2.2-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.4h-3.1V9.3Z"/></svg></a>
+      <a href="https://www.upwork.com/freelancers/~010e39668b5b00a09c?s=1017484851352698999&fbclid=IwY2xjawMF1DBleHRuA2FlbQIxMQABHs9fACg0GHSa_HvSzyVDpSuqeUzW4aeX8QkoTGWYJE9NDHo43x0eCa3YXtJl_aem_YYHnjbrWqoHhUQm731aYNw" target="_blank" rel="noopener" aria-label="Upwork"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.6 6.3c-1.6 0-3 1-3.6 2.5-.9-1.4-1.6-2.9-2.1-4.5H9.1v6.6a2.2 2.2 0 0 1-4.4 0V6.3H2.2v4.6a4.8 4.8 0 1 0 9.6 0v-1c.5.9 1 1.8 1.6 2.6l-.9 4h3l.6-2.6c.5.1 1 .2 1.5.2a4.7 4.7 0 0 0 0-9.4Zm0 6.7c-.3 0-.7 0-1-.2l.6-2.6a2 2 0 0 1 1.9 2.1c0 .4-.2.7-.4 1-.3.3-.7.5-1.1.5Z"/></svg></a>
+    </div>
+    <div class="foot-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="foot-contact">
+      <a href="mailto:support@vertexdigimedia.com">support@vertexdigimedia.com</a>
+      <span>•</span>
+      <a href="tel:+923350225705">+92 335 0225705</a>
+      <a href="https://wa.me/923350225705" target="_blank" rel="noopener" class="wa-inline" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path fill="currentColor" d="M16.06 3C9.41 3 4 8.46 4 15.14c0 2.66.87 5.12 2.34 7.14L4 29l6.94-2.25a12.2 12.2 0 0 0 5.12 1.11c6.65 0 12.06-5.46 12.06-12.14C28.12 8.46 22.71 3 16.06 3Zm6.13 16.9c-.26.74-1.53 1.42-2.13 1.45-.55.03-1.25.06-2.03-.12-.47-.11-1.06-.34-1.82-.67-3.21-1.39-5.3-4.64-5.47-4.87-.16-.22-1.3-1.74-1.3-3.33 0-1.6.82-2.37 1.1-2.69.28-.32.62-.4.82-.4.2 0 .4 0 .58.01.19.01.44-.07.69.55.26.62.9 2.17.97 2.32.07.16.13.34.03.56-.1.21-.16.34-.31.52-.15.18-.33.41-.46.55-.15.16-.31.32-.14.63.18.31.82 1.35 1.77 2.2 1.22 1.08 2.22 1.42 2.53 1.57.31.16.5.13.68-.08.18-.21.79-.91 1-.12.22-.31.43-.26.72-.16.29.1 1.85.94 2.17 1.11.31.16.52.24.6.37.07.13.07.75-.18 1.52Z"/></svg></a>
+    </div>
+  <div class="foot-copy">© <span id="year"></span> Vertex DigiMedia. All rights reserved.</div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+// Contact page form handling (separate to avoid altering global JS file now)
+(function(){
+  const form = document.getElementById('contactPageForm');
+  if(!form) return;
+  const status = document.getElementById('cp-status');
+  const btn = document.getElementById('cp-submit');
+  const fields = ['cp-name','cp-email','cp-company','cp-service','cp-budget','cp-message'];
+  function setErr(id,msg){ const span=document.querySelector(`[data-error-for="${id}"]`); if(span) span.textContent=msg||''; }
+  function valEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    status.textContent='';
+    fields.forEach(f=>setErr(f,''));
+    let ok=true;
+    const data = new FormData(form);
+    if(!data.get('name')?.toString().trim()){ setErr('cp-name','Required'); ok=false; }
+    const em = data.get('email')?.toString().trim();
+    if(!em){ setErr('cp-email','Required'); ok=false; } else if(!valEmail(em)){ setErr('cp-email','Invalid'); ok=false; }
+    if(!data.get('company')?.toString().trim()){ setErr('cp-company','Required'); ok=false; }
+    if(!data.get('service')){ setErr('cp-service','Required'); ok=false; }
+    if(!data.get('budget')){ setErr('cp-budget','Required'); ok=false; }
+    if(!data.get('message')?.toString().trim()){ setErr('cp-message','Required'); ok=false; }
+    if(!ok){ status.textContent='Fix highlighted fields.'; return; }
+    btn.disabled=true; btn.textContent='Sending...';
+    try {
+      await new Promise(r=>setTimeout(r,800));
+      form.reset();
+      status.textContent='Sent! We will reply shortly.';
+    } catch(e){
+      status.textContent='Error. Please retry.';
+    } finally {
+      btn.disabled=false; btn.textContent='Send Message';
+    }
+  });
+})();
+</script>
+</body>
+</html>
