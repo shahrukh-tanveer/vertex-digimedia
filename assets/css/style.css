@@ -188,6 +188,9 @@ section { padding: clamp(3rem, 8vw, 6rem) 0; }
 .stroke { -webkit-text-stroke:1px var(--text); color:transparent; }
 .accent { color: var(--accent); }
 
+/* Honeypot (anti-spam) */
+.hp { position:absolute !important; left:-5000px !important; opacity:0 !important; height:0 !important; width:0 !important; }
+
 ::-webkit-scrollbar { width:10px; }
 ::-webkit-scrollbar-track { background:#0b0b0c; }
 ::-webkit-scrollbar-thumb { background:#1f1f22; border-radius:20px; border:2px solid #0b0b0c; }

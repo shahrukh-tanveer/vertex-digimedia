@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20250814-1" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20250814-2" />
 </head>
 <body>
 <header class="navbar">
@@ -42,7 +42,10 @@
   <div class="container cta-inner">
     <h2>Project & Growth Inquiries</h2>
     <p>Fill the form and we’ll reply with next steps + initial audit notes.</p>
-    <form class="contact-form" id="contactPageForm" novalidate>
+    <!-- Injected: JS-handled submit to Google Apps Script -->
+    <form class="contact-form" id="contactPageForm" method="POST" action="">
+      <!-- Honeypot for spam bots -->
+      <input type="text" name="hp" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-5000px;opacity:0;" />
       <div class="field-group">
         <div class="field">
           <label for="cp-name">Name</label>
@@ -135,42 +138,5 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
-<script>
-// Contact page form handling (separate to avoid altering global JS file now)
-(function(){
-  const form = document.getElementById('contactPageForm');
-  if(!form) return;
-  const status = document.getElementById('cp-status');
-  const btn = document.getElementById('cp-submit');
-  const fields = ['cp-name','cp-email','cp-company','cp-service','cp-budget','cp-message'];
-  function setErr(id,msg){ const span=document.querySelector(`[data-error-for="${id}"]`); if(span) span.textContent=msg||''; }
-  function valEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    status.textContent='';
-    fields.forEach(f=>setErr(f,''));
-    let ok=true;
-    const data = new FormData(form);
-    if(!data.get('name')?.toString().trim()){ setErr('cp-name','Required'); ok=false; }
-    const em = data.get('email')?.toString().trim();
-    if(!em){ setErr('cp-email','Required'); ok=false; } else if(!valEmail(em)){ setErr('cp-email','Invalid'); ok=false; }
-    if(!data.get('company')?.toString().trim()){ setErr('cp-company','Required'); ok=false; }
-    if(!data.get('service')){ setErr('cp-service','Required'); ok=false; }
-    if(!data.get('budget')){ setErr('cp-budget','Required'); ok=false; }
-    if(!data.get('message')?.toString().trim()){ setErr('cp-message','Required'); ok=false; }
-    if(!ok){ status.textContent='Fix highlighted fields.'; return; }
-    btn.disabled=true; btn.textContent='Sending...';
-    try {
-      await new Promise(r=>setTimeout(r,800));
-      form.reset();
-      status.textContent='Sent! We will reply shortly.';
-    } catch(e){
-      status.textContent='Error. Please retry.';
-    } finally {
-      btn.disabled=false; btn.textContent='Send Message';
-    }
-  });
-})();
-</script>
 </body>
 </html>

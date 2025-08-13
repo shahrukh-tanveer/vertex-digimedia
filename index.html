@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20250814-1" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20250814-2" />
   <script>
     // Pretty URL: show /home instead of / or /index.html without reloading
     (function(){
@@ -225,7 +225,10 @@
     <div class="container cta-inner">
       <h2>Ready to accelerate growth?</h2>
       <p>Drop a line—get an actionable audit outline within 24 hours.</p>
-      <form class="contact-form" id="contactForm" novalidate>
+  <!-- Injected: JS-handled submit to Google Apps Script -->
+  <form class="contact-form" id="contactForm" method="POST" action="">
+    <!-- Injected: honeypot field for spam protection -->
+    <input type="text" name="hp" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-5000px;opacity:0;">
         <div class="field-group">
           <div class="field">
             <label for="name">Name</label>
