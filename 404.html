@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    html,body{height:100%;margin:0;background:#0b0b0c;color:#f5f5f5;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    .wrap{height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:12px}
+    .muted{color:#9a9a9f;font-size:.9rem}
+    .spin{width:26px;height:26px;border:3px solid #242428;border-top-color:#ff1d25;border-radius:50%;animation:sp 1s linear infinite}
+    @keyframes sp{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="spin" aria-hidden="true"></div>
+  <div>Redirecting…</div>
+  <div class="muted">If you are not redirected, <a id="manual" href="#" style="color:#ff1d25">click here</a>.</div>
+</div>
+<script>
+(function(){
+  // Map pretty paths to actual HTML files
+  var map = {
+    'home': '/index.html',
+    'about': '/about.html',
+    'services': '/services.html',
+    'blogs': '/blogs.html',
+    'projects': '/projects.html',
+    'contact': '/contact.html'
+  };
+  var path = location.pathname.replace(/\/+$/,'');
+  var parts = path.split('/').filter(Boolean);
+  var slug = parts[0] || '';
+  // Support project pages fallback (optional): detect repo segment
+  var repoBase = '';
+  // If hosted under a repo path (no custom domain), infer base from the first segment
+  // Disabled by default since you use a custom domain. Uncomment if needed.
+  // if(slug && !map[slug]) { repoBase = '/' + slug; slug = parts[1] || ''; }
+
+  var target = map[slug];
+  if (!target) {
+    // Default to homepage
+    target = '/index.html';
+  }
+  // Preserve hash and query
+  var next = (repoBase || '') + target + (location.search || '') + (location.hash || '');
+  if (location.pathname + location.search + location.hash !== next) {
+    // Use replace so back button doesn't loop
+    location.replace(next);
+  }
+  var a = document.getElementById('manual');
+  if (a) a.href = next;
+})();
+</script>
+</body>
+</html>
