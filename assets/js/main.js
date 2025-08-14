@@ -30,7 +30,7 @@ const io = new IntersectionObserver(entries => {
 revealEls.forEach(el => { el.classList.add('reveal'); io.observe(el); });
 
 // Injected: Google Apps Script endpoint URL (replace after deploying the script)
-const APPS_SCRIPT_URL = 'REPLACE_WITH_YOUR_APPS_SCRIPT_WEB_APP_URL';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxnYwCwR_WBBIcL1xO8k3bdCpvUfz4IyeLjo5om_gVU8MI-Qnft3S_HdI3dVRSa8keM/exec';
 // Injected: Recipient email (non-secret). Server will use or override this.
 const CONTACT_TO = 'vertexdigimediacom@gmail.com';
 
@@ -88,8 +88,9 @@ function wireContactForm(cfg) {
 
     try {
       if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.startsWith('REPLACE_')) {
-        // Not configured yet: simulate success
-        await new Promise(r => setTimeout(r, 600));
+        // Not configured yet: show friendly message
+        if (statusEl) statusEl.textContent = 'Form is being set up. Please email support@vertexdigimedia.com meanwhile.';
+        return;
       } else {
         // Attempt JSON (if CORS allowed)
         let ok = false;
@@ -123,8 +124,8 @@ function wireContactForm(cfg) {
           });
         }
       }
-      form.reset();
-      if (statusEl) statusEl.textContent = 'Thanks! We will reply within 24 hours.';
+  form.reset();
+  if (statusEl) statusEl.textContent = 'Thanks! We will reply within 24 hours.';
     } catch (err) {
       if (statusEl) statusEl.textContent = 'Something went wrong. Please try again.';
     } finally {
